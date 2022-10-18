@@ -12,7 +12,7 @@ const masker = (value: Value, mask: string, tokens: Tokens) => {
     const token = tokens[mask[index]];
     let resultChar = "";
     if (token !== undefined) {
-      resultChar = stringifiedValue[indexValue];
+      resultChar = stringifiedValue[indexValue] || "";
       indexValue++;
 
       if (token.pattern) {
