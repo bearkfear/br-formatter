@@ -12,7 +12,11 @@ const masker = (value: Value, mask: string, tokens: Tokens) => {
     const token = tokens[mask[index]];
     let resultChar = "";
     if (token !== undefined) {
-      resultChar = stringifiedValue[indexValue] || "";
+      resultChar = stringifiedValue[indexValue];
+
+      if (resultChar === undefined) {
+        break;
+      }
       indexValue++;
 
       if (token.pattern) {
@@ -43,18 +47,16 @@ export function stringify(
   tokens = defaultTokens
 ): string {
   if (Array.isArray(masks)) {
-    const maskedAndSortedElements = masks
-      .map((mask) => ({
-        masked: masker(value, mask, tokens),
-        mask,
-      }))
-      .sort((a, b) => b.masked.length - a.masked.length);
+    let maskedResult = "";
+    for (const mask of masks.sort((a, b) => b.length - a.length)) {
+      const masked = masker(value, mask, tokens);
+      maskedResult = masked;
 
-    return (
-      maskedAndSortedElements.find(
-        (item) => item.mask.length === item.masked.length
-      ) || maskedAndSortedElements[0]
-    ).masked;
+      if (masked.length === mask.length) {
+        return maskedResult;
+      }
+    }
+    return maskedResult;
   }
   return masker(value, masks, tokens);
 }
