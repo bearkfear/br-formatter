@@ -39,13 +39,24 @@ const masker = (value: Value, mask: string, tokens: Tokens) => {
 
 export function stringify(
   value: Value,
-  mask: Mask,
+  masks: Mask,
   tokens = defaultTokens
 ): string {
-  if (Array.isArray(mask)) {
-    return `s`;
+  if (Array.isArray(masks)) {
+    const maskedAndSortedElements = masks
+      .map((mask) => ({
+        masked: masker(value, mask, tokens),
+        mask,
+      }))
+      .sort((a, b) => b.masked.length - a.masked.length);
+
+    return (
+      maskedAndSortedElements.find(
+        (item) => item.mask.length === item.masked.length
+      ) || maskedAndSortedElements[0]
+    ).masked;
   }
-  return masker(value, mask, tokens);
+  return masker(value, masks, tokens);
 }
 
 export default stringify;
