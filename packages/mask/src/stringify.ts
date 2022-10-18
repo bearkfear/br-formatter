@@ -7,7 +7,6 @@ const masker = (value: Value, mask: string, tokens: Tokens) => {
   const stringifiedValue = String(value);
   let indexValue = 0;
   let resultMasked: string[] = [];
-  const length = Math.min(mask.length, String(value).length);
 
   for (let index = 0; index < mask.length; index++) {
     const token = tokens[mask[index]];
