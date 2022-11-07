@@ -1,7 +1,7 @@
 {
   "name": "@brformatter/money",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "main": "./src/index.ts",
   "files": [

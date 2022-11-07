@@ -1,11 +1,11 @@
 {
   "name": "@brformatter/mask",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "main": "./src/index.ts",
   "files": [
-    "./src/**"
+    "./dist/**"
   ],
   "scripts": {
     "lint": "eslint *.ts*",
