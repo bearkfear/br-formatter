@@ -1,5 +1,5 @@
 import { expect, test, describe } from "vitest";
-import { parse, stringify } from "money";
+import { parse, stringify } from "@brformatter/money";
 import cases from "./__cases__/money.json";
 
 describe("should test parse method", () => {

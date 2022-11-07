@@ -10,7 +10,7 @@
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
     "tsconfig": "*",
-    "money": "*",
-    "mask": "*"
+    "@brformatter/money": "*",
+    "@brformatter/mask": "*"
   }
 }

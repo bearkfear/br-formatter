@@ -1,12 +1,15 @@
 {
-  "name": "money",
+  "name": "@brformatter/money",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
   "main": "./src/index.ts",
-  "files": ["./src/**"],
+  "files": [
+    "./dist/**"
+  ],
   "scripts": {
-    "lint": "eslint *.ts*"
+    "lint": "eslint *.ts*",
+    "build": "yarn tsc"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
