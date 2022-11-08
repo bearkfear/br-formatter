@@ -1,6 +1,6 @@
 {
   "name": "@brformatter/money",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "license": "MIT",
   "main": "./src/index.ts",
@@ -19,5 +19,6 @@
     "eslint": "^7.32.0",
     "eslint-config-custom": "^0.1.0",
     "tsconfig": "^0.1.0"
-  }
+  },
+  "gitHead": "d4ff1722f3234d1237599d40752491765356a048"
 }

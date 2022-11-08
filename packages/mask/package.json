@@ -1,6 +1,6 @@
 {
   "name": "@brformatter/mask",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "license": "MIT",
   "types": "dist/index.d.ts",
@@ -20,5 +20,6 @@
     "eslint": "^7.32.0",
     "eslint-config-custom": "^0.1.0",
     "tsconfig": "^0.1.0"
-  }
+  },
+  "gitHead": "d4ff1722f3234d1237599d40752491765356a048"
 }
