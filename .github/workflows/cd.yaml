@@ -11,7 +11,7 @@ on:
 
 # This allows a subsequently queued workflow run to interrupt previous runs
 concurrency:
-  group: '${{ github.workflow }} @ ${{ github.head_ref || github.ref }}'
+  group: "${{ github.workflow }} @ ${{ github.head_ref || github.ref }}"
   cancel-in-progress: true
 
 jobs:
@@ -36,15 +36,12 @@ jobs:
           cache-dependency-path: yarn.lock
 
       - name: install dependencies
-        working-directory: web
         run: yarn --pure-lockfile
 
       - name: install dependencies
-        working-directory: web
         run: yarn build
 
       - name: lerna release
-        working-directory: web
         run: npx lerna publish --no-private
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
