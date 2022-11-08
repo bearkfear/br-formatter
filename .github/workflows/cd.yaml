@@ -42,3 +42,5 @@ jobs:
       - name: lerna release
         working-directory: web
         run: npx lerna publish --no-private
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
