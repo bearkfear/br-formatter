@@ -1,15 +1,20 @@
 {
   "name": "@brformatter/mask",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "license": "MIT",
-  "main": "./src/index.ts",
+  "types": "dist/index.d.ts",
+  "main": "dist/index.js",
   "files": [
     "./dist/**"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "lint": "eslint *.ts*",
-    "build": "yarn tsc"
+    "build": "yarn tsc",
+    "publish": "npm publish"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
