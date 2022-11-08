@@ -7,10 +7,10 @@
     "lint": "eslint *.ts*"
   },
   "devDependencies": {
-    "@brformatter/mask": "^0.0.2",
-    "@brformatter/money": "^0.1.0",
+    "@brformatter/mask": "*",
+    "@brformatter/money": "*",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "^0.1.0",
-    "tsconfig": "^0.1.0"
+    "eslint-config-custom": "*",
+    "tsconfig": "*"
   }
 }

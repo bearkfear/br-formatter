@@ -39,6 +39,10 @@ jobs:
         working-directory: web
         run: yarn --pure-lockfile
 
+      - name: install dependencies
+        working-directory: web
+        run: yarn build
+
       - name: lerna release
         working-directory: web
         run: npx lerna publish --no-private
