@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/bearkfear/br-formatter/compare/@brformatter/money@0.2.1...@brformatter/money@0.2.2) (2022-11-09)
+
+### Bug Fixes
+
+- **code:** adiciona formacao no código ([8686239](https://github.com/bearkfear/br-formatter/commit/86862399122ad517336563d0cfe73dd0da0730fb))
+
 ## [0.2.1](https://github.com/bearkfear/br-formatter/compare/@brformatter/money@0.2.0...@brformatter/money@0.2.1) (2022-11-09)
 
 ### Bug Fixes
