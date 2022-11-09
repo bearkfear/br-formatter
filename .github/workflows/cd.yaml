@@ -4,15 +4,12 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
-    # paths:
-    #   - 'web/**'
-    #   - '!web/apps/mobile/**'
+      - main 
 
 # This allows a subsequently queued workflow run to interrupt previous runs
 concurrency:
   group: "${{ github.workflow }} @ ${{ github.head_ref || github.ref }}"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -34,6 +31,7 @@ jobs:
           node-version: 16
           cache: "yarn"
           cache-dependency-path: yarn.lock
+          registry-url: https://registry.npmjs.org/
 
       - name: install dependencies
         run: yarn --pure-lockfile
