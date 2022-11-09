@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/bearkfear/br-formatter/compare/@brformatter/money@0.2.0...@brformatter/money@0.2.1) (2022-11-09)
+
+### Bug Fixes
+
+- **money:** transforma para string ([374871c](https://github.com/bearkfear/br-formatter/commit/374871c2b128d0faa46037e625a33706f0f1b6f6))
+
 # [0.2.0](https://github.com/bearkfear/br-formatter/compare/@brformatter/money@0.1.2...@brformatter/money@0.2.0) (2022-11-08)
 
 ### Features
