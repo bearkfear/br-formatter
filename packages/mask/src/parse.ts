@@ -1,5 +1,5 @@
-export function parse(entry: string): number {
-  return parseFloat(String(entry).split(".").join("").replace(",", "."));
+export function parse(entry: string): string {
+  return entry.toString();
 }
 
 export default parse;
