@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main 
+      - main
 
 # This allows a subsequently queued workflow run to interrupt previous runs
 concurrency:
@@ -21,7 +21,7 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.TOKEN }}
 
-      - name: git identity
+      - name: Setup Git Settings
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
@@ -33,13 +33,13 @@ jobs:
           cache-dependency-path: yarn.lock
           registry-url: https://registry.npmjs.org/
 
-      - name: install dependencies
+      - name: Install Project Dependencies
         run: yarn --pure-lockfile
 
-      - name: install dependencies
-        run: yarn build
+      - name: Build Packages
+        run: yarn build --filter=./packages/*
 
       - name: lerna release
-        run: npx lerna publish --no-private --force-publish
+        run: npx lerna publish --no-private
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
