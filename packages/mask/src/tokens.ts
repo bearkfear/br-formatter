@@ -3,7 +3,7 @@ export type Tokens = Record<
   {
     pattern?: RegExp;
     escape?: boolean;
-    transform?: (readonly char: string) => string;
+    transform?: (char: string) => string;
   }
 >;
 
