@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.7](https://github.com/bearkfear/br-formatter/compare/@brformatter/mask@0.1.6...@brformatter/mask@0.1.7) (2022-11-09)
+
+### Bug Fixes
+
+- **mask:** corrige parse ([b13d726](https://github.com/bearkfear/br-formatter/commit/b13d726e94e5b3b55bc60e9ceee0210d3c066da6))
+- **tokens:** remove readonly ([ea0e878](https://github.com/bearkfear/br-formatter/commit/ea0e878c7a595e09be209753f613e58facce8406))
+
 ## [0.1.6](https://github.com/bearkfear/br-formatter/compare/@brformatter/mask@0.1.5...@brformatter/mask@0.1.6) (2022-11-09)
 
 **Note:** Version bump only for package @brformatter/mask
