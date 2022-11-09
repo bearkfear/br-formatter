@@ -13,4 +13,5 @@ A partir de testes é possível criar novos pacotes (dentro de packages/@brforma
 yarn test:ui ## Isso executa o Vitest em modo ui e watch
 
 ```
+#### tags
 [![continuous deployment](https://github.com/bearkfear/br-formatter/actions/workflows/cd.yaml/badge.svg)](https://github.com/bearkfear/br-formatter/actions/workflows/cd.yaml)
