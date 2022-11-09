@@ -2,6 +2,7 @@ import { defaultTokens, Tokens } from "./tokens";
 export type Value = string | number;
 
 export type Mask = Array<string> | string;
+type TransformHandler = ((v: string) => string) | undefined;
 
 const masker = (valueToMask: Value, mask: string, tokens: Tokens) => {
   const MAXIMUM_ITERATION_LOOP = 1000;
@@ -34,8 +35,6 @@ const masker = (valueToMask: Value, mask: string, tokens: Tokens) => {
       continue;
     }
 
-    type TransformHandler = ((v: string) => string) | undefined;
-
     // apply translator if match
     let translationHandler: TransformHandler = undefined;
     if (tokens[maskChar]) {
@@ -49,7 +48,10 @@ const masker = (valueToMask: Value, mask: string, tokens: Tokens) => {
         }
 
         if (token.pattern) {
-          tempV = tempV.replace(token.pattern, "");
+          const match = tempV.match(token.pattern);
+          if (!(match && match.length)) {
+            tempV = "";
+          }
         }
 
         return tempV;
