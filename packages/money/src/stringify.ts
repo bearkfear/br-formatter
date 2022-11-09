@@ -1,6 +1,5 @@
-
 export function stringify(entry: number): string {
-    return String(entry)
+  return String(entry);
 }
 
 export default stringify;

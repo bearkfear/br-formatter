@@ -1,6 +1,6 @@
 ## BR FORMATTER
 
-Este pacote tem como objetivo facilitar a vida dos DEVS Brasileiros que usam TS/JS para desenvolver. 
+Este pacote tem como objetivo facilitar a vida dos DEVS Brasileiros que usam TS/JS para desenvolver.
 
 A ideia é que todos os tipos de formatações que precisa ser em formato BR sejam disponibilizadas por pequenos pacotes
 
@@ -13,5 +13,3 @@ A partir de testes é possível criar novos pacotes (dentro de packages/@brforma
 yarn test:ui ## Isso executa o Vitest em modo ui e watch
 
 ```
-
-
