@@ -80,7 +80,7 @@ const masker = (valueToMask: Value, mask: string, tokens: Tokens) => {
     continue;
   }
 
-  return result;
+  return { result, hasRest: value.length > valueCharIndex };
 };
 
 export function stringify(
@@ -89,18 +89,26 @@ export function stringify(
   tokens = defaultTokens
 ): string {
   if (Array.isArray(masks)) {
-    let maskedResult = "";
-    for (const mask of masks.sort((a, b) => b.length - a.length)) {
-      const masked = masker(value, mask, tokens);
-      maskedResult = masked;
+    const sorted = masks.sort((a, b) => {
+      return a.length - b.length;
+    });
 
-      if (masked.length === mask.length) {
-        return maskedResult;
+    let lastMasked = "";
+    let lastMask = "";
+    for (const mask of sorted) {
+      const masked = masker(value, mask, tokens);
+
+      if (mask.length === masked.result.length && masked.hasRest === false) {
+        return masked.result;
       }
+
+      lastMasked = masked.result;
+      lastMask = mask;
     }
-    return maskedResult;
+    return lastMasked;
+  } else {
+    return masker(value, masks, tokens).result;
   }
-  return masker(value, masks, tokens);
 }
 
 export default stringify;

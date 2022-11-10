@@ -25,3 +25,10 @@ test("should format when has more than one mask", () => {
   expect(stringify("123456789", masks)).toBe("1-2-3-4-5-6789");
   expect(stringify("12345678", masks)).toBe("1-2-3-4-5-678");
 });
+
+
+test("should test masks lenght multiply", () => { 
+  const maskToTest = ['####-##-###', '##--##', '###-##']
+  expect(stringify("12345", maskToTest)).toBe("123-45");
+  expect(stringify("123456", maskToTest)).toBe("1234-56"); 
+})
