@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.8](https://github.com/bearkfear/br-formatter/compare/@brformatter/money@0.2.7...@brformatter/money@0.2.8) (2022-11-18)
+
+**Note:** Version bump only for package @brformatter/money
+
 ## [0.2.7](https://github.com/bearkfear/br-formatter/compare/@brformatter/money@0.2.6...@brformatter/money@0.2.7) (2022-11-09)
 
 **Note:** Version bump only for package @brformatter/money
