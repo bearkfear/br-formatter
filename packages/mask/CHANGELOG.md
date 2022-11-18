@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.6](https://github.com/bearkfear/br-formatter/compare/@brformatter/mask@0.2.5...@brformatter/mask@0.2.6) (2022-11-18)
+
+### Bug Fixes
+
+- **mask:** corrige multiplas mascaras ([18a8d0a](https://github.com/bearkfear/br-formatter/commit/18a8d0af61126338dbbf09bc403159994ae27418))
+
 ## [0.2.5](https://github.com/bearkfear/br-formatter/compare/@brformatter/mask@0.2.4...@brformatter/mask@0.2.5) (2022-11-18)
 
 **Note:** Version bump only for package @brformatter/mask

@@ -1,6 +1,6 @@
 {
   "name": "@brformatter/mask",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "private": false,
   "license": "MIT",
   "types": "dist/index.d.ts",
