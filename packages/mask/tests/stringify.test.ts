@@ -33,7 +33,6 @@ test("should test multiple masks with varing the value length", () => {
   expect(stringify("1234", maskToTest)).toBe("12--34");
 });
 
-
 test("should format with multiple masks that end with char that is not token", () => {
   const maskToTest = ["##,##%", "###,##%"];
   expect(stringify("1234", maskToTest)).toBe("12,34%");
@@ -43,4 +42,12 @@ test("should format with multiple masks that end with char that is not token", (
 test("Should format with incomplete masks ending with not token", () => {
   const maskToTest = "##,##%%";
   expect(stringify("12A4", maskToTest)).toBe("12,4");
+});
+
+test("Should format gradually with multiple masks", () => {
+  const masksToTest = ["#,##%", "##,##%", "###,##%"];
+  expect(stringify("9", masksToTest)).toBe("9,");
+  expect(stringify("999", masksToTest)).toBe("9,99%");
+  expect(stringify("9999", masksToTest)).toBe("99,99%");
+  expect(stringify("99999", masksToTest)).toBe("999,99%");
 });

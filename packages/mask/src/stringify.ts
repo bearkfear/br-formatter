@@ -6,24 +6,34 @@ export function stringify(
   masks: Mask,
   tokens = defaultTokens
 ): string {
+  if (masks.length === 0) {
+    return "";
+  }
+
   if (Array.isArray(masks)) {
     const sorted = masks.sort((a, b) => {
       return a.length - b.length;
     });
 
-    let lastMasked = "";
-    let lastMask = "";
-    for (const mask of sorted) {
-      const masked = masker(value, mask, tokens);
+    const maskedValues = sorted
+      .map((mask) => {
+        const masked = masker(value, mask, tokens);
 
-      if (mask.length === masked.result.length && masked.hasRest === false) {
-        return masked.result;
-      }
+        const exact = masked.result.length === mask.length;
 
-      lastMasked = masked.result;
-      lastMask = mask;
+        return { ...masked, exact };
+      })
+      .sort((a, b) => b.result.length - a.result.length);
+
+    const finded = maskedValues.find(
+      (item) => item.exact && item.hasRest === false
+    );
+
+    if (finded) {
+      return finded.result;
     }
-    return lastMasked;
+
+    return maskedValues[0].result;
   }
 
   return masker(value, masks, tokens).result;
