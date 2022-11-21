@@ -51,3 +51,8 @@ test("Should format gradually with multiple masks", () => {
   expect(stringify("9999", masksToTest)).toBe("99,99%");
   expect(stringify("99999", masksToTest)).toBe("999,99%");
 });
+
+
+test("Should return empty mask when value is empty", () => { 
+  expect(stringify("", "(##)")).toBe("");
+})

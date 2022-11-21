@@ -6,7 +6,7 @@ export function stringify(
   masks: Mask,
   tokens = defaultTokens
 ): string {
-  if (masks.length === 0) {
+  if (masks.length === 0 || value === "") {
     return "";
   }
 
