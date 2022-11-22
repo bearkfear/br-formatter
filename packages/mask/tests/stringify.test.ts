@@ -1,5 +1,5 @@
 import { test, expect } from "vitest";
-import { stringify, masks } from "../src";
+import { stringify, masks, defaultTokens } from "../src";
 
 test("should format as CEP", () => {
   expect(stringify(9999999, masks.cep)).toBe("99999-99");
@@ -55,4 +55,11 @@ test("Should format gradually with multiple masks", () => {
 
 test("Should return empty mask when value is empty", () => { 
   expect(stringify("", "(##)")).toBe("");
+}) 
+
+test("Should get the same result with format", () => {
+  const mask = "021###";
+  const masked = stringify("123456", mask, true);
+  expect(masked).toBe("021456");
+  expect(stringify(masked, mask, true)).toBe("021456");
 })

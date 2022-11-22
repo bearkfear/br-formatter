@@ -6,13 +6,14 @@ export type Mask = Array<string> | string;
 type Masker = (
   valueToMask: Value,
   mask: string,
-  tokens: Tokens
+  tokens: Tokens,
+  masked: boolean
 ) => { result: string; hasRest: boolean };
 
-export const masker: Masker = (valueToMask, mask, tokens) => {
+export const masker: Masker = (valueToMask, mask, tokens, masked) => {
   let value = String(valueToMask).split("");
 
-  const result: string[] = [];
+  const result = Array<string>();
 
   for (const maskChar of mask) {
     if (maskChar in tokens) {
@@ -38,6 +39,9 @@ export const masker: Masker = (valueToMask, mask, tokens) => {
         }
       }
     } else {
+      if (masked) {
+        value.shift();
+      }
       result.push(maskChar);
     }
   }

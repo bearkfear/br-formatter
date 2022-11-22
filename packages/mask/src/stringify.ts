@@ -4,7 +4,8 @@ import { defaultTokens } from "./tokens";
 export function stringify(
   value: Value,
   masks: Mask,
-  tokens = defaultTokens
+  isMasked = false,
+  tokens = defaultTokens,
 ): string {
   if (masks.length === 0 || value === "") {
     return "";
@@ -17,7 +18,7 @@ export function stringify(
 
     const maskedValues = sorted
       .map((mask) => {
-        const masked = masker(value, mask, tokens);
+        const masked = masker(value, mask, tokens, isMasked);
 
         const exact = masked.result.length === mask.length;
 
@@ -36,7 +37,7 @@ export function stringify(
     return maskedValues[0].result;
   }
 
-  return masker(value, masks, tokens).result;
+  return masker(value, masks, tokens, isMasked).result;
 }
 
 export default stringify;
