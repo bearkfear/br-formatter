@@ -52,14 +52,18 @@ test("Should format gradually with multiple masks", () => {
   expect(stringify("99999", masksToTest)).toBe("999,99%");
 });
 
-
-test("Should return empty mask when value is empty", () => { 
+test("Should return empty mask when value is empty", () => {
   expect(stringify("", "(##)")).toBe("");
-}) 
+});
 
 test("Should get the same result with format", () => {
   const mask = "021###";
   const masked = stringify("123456", mask, true);
   expect(masked).toBe("021456");
   expect(stringify(masked, mask, true)).toBe("021456");
-})
+
+  expect(stringify("021", mask, true)).toBe("021")
+  expect(stringify("021", mask, true)).toBe("021")
+  expect(stringify("0", mask, true)).toBe("021")
+  expect(stringify("021999", mask, true)).toBe("021999")
+});
