@@ -15,13 +15,13 @@
     "test:ui": "vitest --ui"
   },
   "devDependencies": {
-    "@vitest/ui": "^0.25.0",
+    "@vitest/ui": "^0.34.0",
     "eslint-config-custom": "*",
     "lerna": "^6.0.3",
     "prettier": "latest",
     "turbo": "latest",
     "typescript": "^4.8.2",
-    "vitest": "^0.25.0"
+    "vitest": "^0.34.0"
   },
   "engines": {
     "node": ">=14.0.0"
